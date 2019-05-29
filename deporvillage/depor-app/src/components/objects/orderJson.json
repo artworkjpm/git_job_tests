@@ -1,0 +1,65 @@
+{
+  "orders": [
+    {
+      "orderId": 234568,
+      "items": [
+        {
+          "itemId": 62345654,
+          "itemsku": "Tea Pot",
+          "color": "white",
+          "price": 33.99,
+          "quantity": 1,
+          "src": "https://picsum.photos/100"
+        },
+        {
+          "itemId": 624354,
+          "itemsku": "Nike T Shirt",
+          "color": "Blue",
+          "size": "Large",
+          "price": 15.99,
+          "quantity": 1
+        }
+      ],
+      "orderAddress": {
+        "shipping": "1 Calle Girona, Sant Boi de Llobegrat, Barcelona, 08802",
+        "billing": "35 Casa, calle de Santiago, Sant Jose, Barcelona, 08540"
+      },
+      "orderStatus": "Delivered"
+    },
+
+    {
+      "orderId": 1450568,
+      "items": [
+        {
+          "itemId": 654654,
+          "itemsku": "Toaster",
+          "color": "white",
+          "price": 13.99,
+          "quantity": 1,
+          "src": "https://picsum.photos/100"
+        },
+        {
+          "itemId": 654654,
+          "itemsku": "Nike Air Max Cross xtreme",
+          "color": "Beige",
+          "size": "44",
+          "price": 66.99,
+          "quantity": 1
+        },
+        {
+          "itemId": 6588894,
+          "itemsku": "Gorro de Adidas",
+          "color": "Black",
+          "size": "N/A",
+          "price": 9.99,
+          "quantity": 1
+        }
+      ],
+      "orderAddress": {
+        "shipping": "1 Calle Bruguers, El Prat de Llobegrat, Barcelona, 08802",
+        "billing": "3335 Casa, calle de agosto, Sant Cugat, Barcelona, 08540"
+      },
+      "orderStatus": "Sent to warehouse"
+    }
+  ]
+}
