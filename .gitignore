@@ -1,3 +1,28 @@
 
+.DS_Store
 deporvillage/.DS_Store
 deporvillage/depor-app/node_modules
+
+
+
+# dependencies
+deporvillage/depor-app/node_modules
+deporvillage/depor-app/.pnp
+deporvillage/depor-app/.pnp.js
+
+# testing
+deporvillage/depor-app/coverage
+
+# production
+deporvillage/depor-app/build
+
+# misc
+deporvillage/depor-app/.DS_Store
+deporvillage/depor-app/.env.local
+deporvillage/depor-app/.env.development.local
+deporvillage/depor-app/.env.test.local
+deporvillage/depor-app/.env.production.local
+
+deporvillage/depor-app/npm-debug.log*
+deporvillage/depor-app/yarn-debug.log*
+deporvillage/depor-app/yarn-error.log*
