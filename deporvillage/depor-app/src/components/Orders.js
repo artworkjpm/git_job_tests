@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ordersJson from "./objects/orderJson.json";
 import OrderHeading from "./OrderHeading";
+import Items from "./Items";
 
 class OrderTable extends Component {
   constructor() {
@@ -30,19 +31,7 @@ class OrderTable extends Component {
                   <td>
                     <ul className="list-unstyled">
                       {order.items.map(item => (
-                        <li className="media item-list" key={item.itemId}>
-                          <img
-                            src={item.src + "?random=" + Math.random()}
-                            className="mr-3"
-                            alt="..."
-                          />
-                          <div className="media-body">
-                            <h5 className="mt-0 mb-1">{item.itemsku}</h5>
-                            <div>Product ID: {item.itemId}</div>
-                            <div>Price: €{item.price}</div>
-                            <div>Quantity: {item.quantity}</div>
-                          </div>
-                        </li>
+                        <Items item={item} key={item.itemId} />
                       ))}
                     </ul>
                   </td>
