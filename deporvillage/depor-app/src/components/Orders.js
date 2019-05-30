@@ -11,72 +11,77 @@ class OrderTable extends Component {
 
   render() {
     const orderJson = this.state.ordersJson.orders;
-    var totalOrder;
+    var totalOrder = [];
     for (let i = 0; i < orderJson.length; i++) {
-      totalOrder = orderJson[i].items.reduce((total, order) => {
-        console.log("order.price: " + order.price);
-        return total + order.price;
-      }, 0);
+      totalOrder.push(
+        orderJson[i].items.reduce((total, order) => {
+          return total + order.price;
+        }, 0)
+      );
     }
 
     return (
-      <div className="order-items">
+      <React.Fragment>
         {this.state.ordersJson.orders.map((order, index) => (
-          <table className="table" key={index}>
-            <tbody>
-              <tr className="list-group-item-secondary">
-                <td>
-                  <div className="row">
-                    <div className="col-6">
-                      <div>
-                        <b>ORDER ID:</b> {order.orderId}
+          <div className="order-items" key={index}>
+            <table className="table">
+              <tbody>
+                <tr className="list-group-item-secondary">
+                  <td>
+                    <div className="row">
+                      <div className="col-6">
+                        <div>
+                          <b>ORDER ID:</b> {order.orderId}
+                        </div>
+                        <div>
+                          <b>Order Billing Address:</b>{" "}
+                          {order.orderAddress.billing}
+                        </div>
+                        <div>
+                          <b>Order Shipping Address:</b>{" "}
+                          {order.orderAddress.shipping}
+                        </div>
+                        <div>
+                          <b>TOTAL PRICE:</b> {totalOrder[index]}
+                        </div>
                       </div>
-                      <div>
-                        <b>Order Billing Address:</b>{" "}
-                        {order.orderAddress.billing}
-                      </div>
-                      <div>
-                        <b>Order Shipping Address:</b>{" "}
-                        {order.orderAddress.shipping}
-                      </div>
-                      <div>
-                        <b>TOTAL PRICE:</b> {totalOrder}
+                      <div className="col-6">
+                        Order Status:{" "}
+                        <ul className="list-group">
+                          <li className="list-group-item list-group-item-success">
+                            {order.orderStatus}
+                          </li>
+                        </ul>
                       </div>
                     </div>
-                    <div className="col-6">
-                      Order Status:{" "}
-                      <ul className="list-group">
-                        <li className="list-group-item list-group-item-success">
-                          Delivered
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <ul className="list-unstyled">
+                      {order.items.map(item => (
+                        <li className="media item-list" key={item.itemId}>
+                          <img
+                            src={item.src + "?random=" + index++}
+                            className="mr-3"
+                            alt="..."
+                          />
+                          <div className="media-body">
+                            <h5 className="mt-0 mb-1">Toaster</h5>
+                            <div>Product ID:</div>
+                            <div>Price: 111</div>
+                            <div>Quantity: 1</div>
+                          </div>
                         </li>
-                      </ul>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <ul className="list-unstyled">
-                    <li className="media">
-                      <img
-                        src={order.items[0].src + "?random=" + (index + 1)}
-                        className="mr-3"
-                        alt="..."
-                      />
-                      <div className="media-body">
-                        <h5 className="mt-0 mb-1">Toaster</h5>
-                        <div>Product ID: 111</div>
-                        <div>Price: 111</div>
-                        <div>Quantity: 1</div>
-                      </div>
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                      ))}
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         ))}
-      </div>
+      </React.Fragment>
     );
   }
 }

@@ -40,3 +40,10 @@
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
 }
+.item-list:not(:last-child) {
+  margin-bottom: 10px;
+}
+.table,
+ul.list-unstyled {
+  margin-bottom: unset;
+}
