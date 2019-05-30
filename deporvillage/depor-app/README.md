@@ -1,4 +1,4 @@
-## I used CREATE-REACT-APP to make this Order Exporer.---
+## I used CREATE-REACT-APP to make this Order Exporer.
 
 Once you app is almost ready, how will you deploy the service to a cloud hosting? You can try to summarize your solution using -
 
