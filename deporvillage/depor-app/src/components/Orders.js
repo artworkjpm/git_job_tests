@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ordersJson from "./objects/orderJson.json";
+import OrderHeading from "./OrderHeading";
 
 class OrderTable extends Component {
   constructor() {
@@ -10,16 +11,6 @@ class OrderTable extends Component {
   }
 
   render() {
-    const orderJson = this.state.ordersJson.orders;
-    var totalOrder = [];
-    for (let i = 0; i < orderJson.length; i++) {
-      totalOrder.push(
-        orderJson[i].items.reduce((total, order) => {
-          return total + order.price;
-        }, 0)
-      );
-    }
-
     return (
       <React.Fragment>
         {this.state.ordersJson.orders.map((order, index) => (
@@ -28,32 +19,11 @@ class OrderTable extends Component {
               <tbody>
                 <tr className="list-group-item-secondary">
                   <td>
-                    <div className="row">
-                      <div className="col-6">
-                        <div>
-                          <b>ORDER ID:</b> {order.orderId}
-                        </div>
-                        <div>
-                          <b>Order Billing Address:</b>{" "}
-                          {order.orderAddress.billing}
-                        </div>
-                        <div>
-                          <b>Order Shipping Address:</b>{" "}
-                          {order.orderAddress.shipping}
-                        </div>
-                        <div>
-                          <b>TOTAL PRICE:</b> {totalOrder[index]}
-                        </div>
-                      </div>
-                      <div className="col-6">
-                        Order Status:{" "}
-                        <ul className="list-group">
-                          <li className="list-group-item list-group-item-success">
-                            {order.orderStatus}
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+                    <OrderHeading
+                      ind={index}
+                      orderJson={this.state.ordersJson.orders}
+                      order={order}
+                    />
                   </td>
                 </tr>
                 <tr>
@@ -62,15 +32,15 @@ class OrderTable extends Component {
                       {order.items.map(item => (
                         <li className="media item-list" key={item.itemId}>
                           <img
-                            src={item.src + "?random=" + index++}
+                            src={item.src + "?random=" + Math.random()}
                             className="mr-3"
                             alt="..."
                           />
                           <div className="media-body">
-                            <h5 className="mt-0 mb-1">Toaster</h5>
-                            <div>Product ID:</div>
-                            <div>Price: 111</div>
-                            <div>Quantity: 1</div>
+                            <h5 className="mt-0 mb-1">{item.itemsku}</h5>
+                            <div>Product ID: {item.itemId}</div>
+                            <div>Price: €{item.price}</div>
+                            <div>Quantity: {item.quantity}</div>
                           </div>
                         </li>
                       ))}

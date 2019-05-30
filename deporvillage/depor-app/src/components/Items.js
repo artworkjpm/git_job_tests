@@ -1,9 +1,7 @@
 import React from "react";
 
 const Items = ({ ordersJson, index }) => {
-  return (
-
-/*     <li className="media">
+  /*     <li className="media">
     <img
       src={order.items[0].src + "?random=" + (index + 1)}
       className="mr-3"
@@ -16,7 +14,6 @@ const Items = ({ ordersJson, index }) => {
       <div>Quantity: 1</div>
     </div>
   </li> */
-  );
 };
 
 export default Items;

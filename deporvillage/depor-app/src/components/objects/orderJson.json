@@ -7,8 +7,8 @@
           "itemId": 24535654,
           "itemsku": "Tea Pot",
           "color": "white",
-          "price": 1,
-          "quantity": 1,
+          "price": 10.99,
+          "quantity": 2,
           "src": "https://picsum.photos/100"
         },
         {
@@ -16,7 +16,7 @@
           "itemsku": "Nike T Shirt",
           "color": "Blue",
           "size": "Large",
-          "price": 2,
+          "price": 22.99,
           "quantity": 1,
           "src": "https://picsum.photos/100"
         }
@@ -35,7 +35,7 @@
           "itemId": 654297654,
           "itemsku": "Toaster",
           "color": "white",
-          "price": 3,
+          "price": 21.99,
           "quantity": 1,
           "src": "https://picsum.photos/100"
         },
@@ -44,7 +44,7 @@
           "itemsku": "Nike Air Max Cross xtreme",
           "color": "Beige",
           "size": "44",
-          "price": 4,
+          "price": 69.99,
           "quantity": 1,
           "src": "https://picsum.photos/100"
         },
@@ -53,8 +53,8 @@
           "itemsku": "Gorro de Adidas",
           "color": "Black",
           "size": "N/A",
-          "price": 5,
-          "quantity": 1,
+          "price": 8.99,
+          "quantity": 3,
           "src": "https://picsum.photos/100"
         }
       ],
