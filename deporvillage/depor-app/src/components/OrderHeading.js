@@ -14,25 +14,27 @@ const OrderHeading = props => {
     <div className="row">
       <div className="col-6">
         <div>
-          <b>ORDER ID:</b> {props.order.orderId}
+          <b>Billing Address:</b> {props.order.orderAddress.billing}
         </div>
         <div>
-          <b>Order Billing Address:</b> {props.order.orderAddress.billing}
-        </div>
-        <div>
-          <b>Order Shipping Address:</b> {props.order.orderAddress.shipping}
+          <b>Shipping Address:</b> {props.order.orderAddress.shipping}
         </div>
         <div>
           <b>TOTAL PRICE:</b> €{totalOrder[props.ind].toFixed(2)}
         </div>
       </div>
       <div className="col-6">
-        <b>Order Status: </b>
-        <ul className="list-group">
-          <li className="list-group-item list-group-item-success">
-            {props.order.orderStatus}
-          </li>
-        </ul>
+        <div>
+          <b>ORDER ID:</b> {props.order.orderId}
+        </div>
+        <div>
+          <b>Order Status: </b>
+          <ul className="list-group">
+            <li className="list-group-item list-group-item-success">
+              {props.order.orderStatus}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

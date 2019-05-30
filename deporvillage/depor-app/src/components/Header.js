@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="..">
-        Order Explore Test John Moran
+        <b>Order Explorer Test</b> <span>By John Moran</span>
       </a>
       <button
         className="navbar-toggler"
