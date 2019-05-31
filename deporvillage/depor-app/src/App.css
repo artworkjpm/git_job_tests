@@ -52,3 +52,7 @@ ul.list-unstyled {
   font-size: 14px;
   margin-left: 10px;
 }
+
+.modal-body img {
+  float: left;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import OrderAgain from "./orderAgain";
 import APIKey from "./objects/apiKey.json";
 import axios from "axios";
 
@@ -7,9 +8,15 @@ export default class Items extends Component {
     super();
     this.state = {
       imgs: [],
-      loading: true
+      loading: true,
+      openModal: false,
+      buttonType: ""
     };
   }
+
+  handleIncrement = () => {
+    this.setState({ buttonType: "balls" });
+  };
 
   componentDidMount() {
     let itemName = this.props.item.itemsku;
@@ -50,15 +57,40 @@ export default class Items extends Component {
             </div>
             <div className="col-6">
               <p className="mt-0 mb-1">Modify item:</p>
-              <button type="button" className="btn btn-primary mr-3">
+              <button
+                type="button"
+                className="btn btn-primary mr-3"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
                 Order again
               </button>
-              <button type="button" className="btn btn-warning mr-3">
-                Return item
+              <button
+                type="button"
+                className="btn btn-warning mr-3"
+                data-toggle="modal"
+                data-target="#exampleModal"
+                onClick={this.handleIncrement}
+              >
+                > Return item
               </button>
-              <button type="button" className="btn btn-danger mr-3">
+              <button
+                type="button"
+                className="btn btn-danger mr-3"
+                data-toggle="modal"
+                data-target="#exampleModal"
+                passit={this.state.buttonType}
+              >
                 Cancel order
               </button>
+              <OrderAgain
+                data-target="#exampleModal"
+                src={this.state.imgs}
+                name={this.props.item.itemsku}
+                productId={props.item.itemId}
+                price={props.item.price}
+                quantity={props.item.quantity}
+              />
             </div>
           </div>
         </div>
