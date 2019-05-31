@@ -12,13 +12,16 @@ export default class Items extends Component {
   }
 
   componentDidMount() {
+    let itemName = this.props.item.itemsku;
+    //console.log(itemName);
+    //let randomNumber = Math.floor(Math.random() * 10) + 0;
     axios
       .get(
-        "https://api.unsplash.com/search/photos?query=office?page=1&per_page=1?&client_id=" +
+        `https://api.unsplash.com/search/photos?query=${itemName}?&client_id=` +
           APIKey.APIKey
       )
       .then(data => {
-        console.log(data.data.results[0]);
+        //console.log(randomNumber);
         this.setState({ imgs: data.data.results[0].urls.thumb });
       })
       .catch(err => {
@@ -28,6 +31,7 @@ export default class Items extends Component {
 
   render() {
     const props = this.props;
+
     return (
       //console.log("gifs: " + gifs);
       <li className="media item-list">
@@ -36,6 +40,8 @@ export default class Items extends Component {
           //src={props.item.src + "?random=" + Math.random()}
           className="mr-3"
           alt="..."
+          height="100"
+          width="100"
         />
         <div className="media-body">
           <h5 className="mt-0 mb-1">{this.props.item.itemsku}</h5>
