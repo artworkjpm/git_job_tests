@@ -26,3 +26,5 @@ deporvillage/depor-app/.env.production.local
 deporvillage/depor-app/npm-debug.log*
 deporvillage/depor-app/yarn-debug.log*
 deporvillage/depor-app/yarn-error.log*
+.DS_Store
+fetchingInReact-master/node_modules
