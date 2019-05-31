@@ -2,6 +2,7 @@
 .DS_Store
 deporvillage/.DS_Store
 deporvillage/depor-app/node_modules
+deporvillage/depor-app/src/components/objects/apiKey.json
 
 
 

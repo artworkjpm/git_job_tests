@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import APIKey from "./objects/apiKey.json";
 import axios from "axios";
 
 export default class Items extends Component {
@@ -11,13 +12,14 @@ export default class Items extends Component {
   }
 
   componentDidMount() {
-    var APIKey =
-      "0a72573d610a225e4be9f7b1e2f914596091a66cc7894588f13ba3810ada5abc";
     axios
-      .get("https://api.unsplash.com/photos/?client_id=" + APIKey)
+      .get(
+        "https://api.unsplash.com/search/photos?query=office?page=1&per_page=1?&client_id=" +
+          APIKey.APIKey
+      )
       .then(data => {
-        console.log(data.data);
-        this.setState({ imgs: data.data });
+        console.log(data.data.results[0]);
+        this.setState({ imgs: data.data.results[0].urls.thumb });
       })
       .catch(err => {
         console.log("Error happened during fetching!", err);

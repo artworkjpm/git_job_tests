@@ -16,7 +16,8 @@ export default class App extends Component {
 	}
 
 	componentDidMount() {
-		this.performSearch();
+		this.performSearch(); 
+		console.log(cred.APP_ID)
 	}
 
 	performSearch = (query = 'sun') => {
