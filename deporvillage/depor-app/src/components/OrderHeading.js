@@ -14,6 +14,9 @@ const OrderHeading = props => {
     <div className="row">
       <div className="col-6">
         <div>
+          <b>Customer name:</b> {props.order.name}
+        </div>
+        <div>
           <b>Billing Address:</b> {props.order.orderAddress.billing}
         </div>
         <div>

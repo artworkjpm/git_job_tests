@@ -13,15 +13,12 @@ export default class Items extends Component {
 
   componentDidMount() {
     let itemName = this.props.item.itemsku;
-    //console.log(itemName);
-    //let randomNumber = Math.floor(Math.random() * 10) + 0;
     axios
       .get(
         `https://api.unsplash.com/search/photos?query=${itemName}?&client_id=` +
           APIKey.APIKey
       )
       .then(data => {
-        //console.log(randomNumber);
         this.setState({ imgs: data.data.results[0].urls.thumb });
       })
       .catch(err => {
@@ -44,10 +41,26 @@ export default class Items extends Component {
           width="100"
         />
         <div className="media-body">
-          <h5 className="mt-0 mb-1">{this.props.item.itemsku}</h5>
-          <div>Product ID: {props.item.itemId}</div>
-          <div>Price: €{props.item.price}</div>
-          <div>Quantity: {props.item.quantity}</div>
+          <div className="row">
+            <div className="col-6">
+              <h5 className="mt-0 mb-1">{this.props.item.itemsku}</h5>
+              <div>Product ID: {props.item.itemId}</div>
+              <div>Price: €{props.item.price}</div>
+              <div>Quantity: {props.item.quantity}</div>
+            </div>
+            <div className="col-6">
+              <p className="mt-0 mb-1">Modify item:</p>
+              <button type="button" className="btn btn-primary mr-3">
+                Order again
+              </button>
+              <button type="button" className="btn btn-warning mr-3">
+                Return item
+              </button>
+              <button type="button" className="btn btn-danger mr-3">
+                Cancel order
+              </button>
+            </div>
+          </div>
         </div>
       </li>
     );

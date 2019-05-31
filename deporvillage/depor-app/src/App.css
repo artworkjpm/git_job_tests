@@ -40,6 +40,8 @@
 }
 .item-list:not(:last-child) {
   margin-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
 }
 .table,
 ul.list-unstyled {
