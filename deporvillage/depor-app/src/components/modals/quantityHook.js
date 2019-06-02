@@ -9,14 +9,14 @@ function OrderAgainModal() {
         {" "}
         <button
           type="button"
-          className="btn btn-danger mr-3"
+          className="btn btn-danger mr-3 plus"
           onClick={() => setCount(count > 0 ? count - 1 : 1)}
         >
           -
         </button>
         <button
           type="button"
-          className="btn btn-success mr-3"
+          className="btn btn-success mr-3 plus"
           onClick={() => setCount(count + 1)}
         >
           +

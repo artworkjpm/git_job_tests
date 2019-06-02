@@ -22,7 +22,7 @@ const OrderHeading = props => {
         <div>
           <b>Shipping Address:</b> {props.order.orderAddress.shipping}
         </div>
-        <div>
+        <div className="increase">
           <b>TOTAL PRICE:</b> €{totalOrder[props.ind].toFixed(2)}
         </div>
       </div>

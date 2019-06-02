@@ -1,11 +1,10 @@
 import React from "react";
-import OrderAgainModal from "./modals/OrderAgainModal";
 
-const OrderAgain = props => {
+const Cancel = props => {
   return (
     <div
       className="modal fade"
-      id="exampleModal"
+      id={"cancel" + props.productId}
       tabIndex="-1"
       role="dialog"
       aria-labelledby="exampleModalLabel"
@@ -35,9 +34,7 @@ const OrderAgain = props => {
               height="100"
               width="100"
             />
-            <div>
-              <OrderAgainModal />
-            </div>
+            <div>Are you sure you want to cancel this item?</div>
           </div>
           <div className="modal-footer">
             <button
@@ -48,7 +45,7 @@ const OrderAgain = props => {
               Close
             </button>
             <button type="button" className="btn btn-primary">
-              Save changes
+              Yes, cancel
             </button>
           </div>
         </div>
@@ -57,4 +54,4 @@ const OrderAgain = props => {
   );
 };
 
-export default OrderAgain;
+export default Cancel;

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import OrderAgain from "./orderAgain";
+import OrderAgain from "./modals/orderAgain";
+import Return from "./modals/Return";
+import Cancel from "./modals/Cancel";
 import APIKey from "./objects/apiKey.json";
 import axios from "axios";
 
@@ -14,11 +16,8 @@ export default class Items extends Component {
     };
   }
 
-  handleIncrement = () => {
-    this.setState({ buttonType: "balls" });
-  };
-
   componentDidMount() {
+    //I made an api call to unsplash to get images using the item name
     let itemName = this.props.item.itemsku;
     axios
       .get(
@@ -50,7 +49,7 @@ export default class Items extends Component {
         <div className="media-body">
           <div className="row">
             <div className="col-6">
-              <h5 className="mt-0 mb-1">{this.props.item.itemsku}</h5>
+              <h5 className="mt-0 mb-1">{props.item.itemsku}</h5>
               <div>Product ID: {props.item.itemId}</div>
               <div>Price: €{props.item.price}</div>
               <div>Quantity: {props.item.quantity}</div>
@@ -61,7 +60,7 @@ export default class Items extends Component {
                 type="button"
                 className="btn btn-primary mr-3"
                 data-toggle="modal"
-                data-target="#exampleModal"
+                data-target={"#OrderAgain" + props.item.itemId}
               >
                 Order again
               </button>
@@ -69,27 +68,41 @@ export default class Items extends Component {
                 type="button"
                 className="btn btn-warning mr-3"
                 data-toggle="modal"
-                data-target="#exampleModal"
-                onClick={this.handleIncrement}
+                data-target={"#return" + props.item.itemId}
               >
-                > Return item
+                Return item
               </button>
               <button
                 type="button"
                 className="btn btn-danger mr-3"
                 data-toggle="modal"
-                data-target="#exampleModal"
-                passit={this.state.buttonType}
+                data-target={"#cancel" + props.item.itemId}
+                //passit={this.state.buttonType}
               >
                 Cancel order
               </button>
+
               <OrderAgain
-                data-target="#exampleModal"
+                data-target="#OrderAgain"
                 src={this.state.imgs}
-                name={this.props.item.itemsku}
+                name={props.item.itemsku}
                 productId={props.item.itemId}
                 price={props.item.price}
                 quantity={props.item.quantity}
+              />
+              <Return
+                data-target="#return"
+                src={this.state.imgs}
+                name={props.item.itemsku}
+                productId={props.item.itemId}
+                price={props.item.price}
+              />
+              <Cancel
+                data-target="#cancel"
+                src={this.state.imgs}
+                name={props.item.itemsku}
+                productId={props.item.itemId}
+                price={props.item.price}
               />
             </div>
           </div>
