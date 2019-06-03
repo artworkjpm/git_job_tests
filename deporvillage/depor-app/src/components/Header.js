@@ -1,11 +1,18 @@
 import React from "react";
+import useForm from "./search/useForm";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  const { values, handleChange, handleSubmit } = useForm(search);
+  function search() {
+    console.log(values);
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="..">
+      <NavLink exact to="/" className="navbar-brand">
         <b>Order Explorer Test</b> <span>By John Moran</span>
-      </a>
+      </NavLink>
       <button
         className="navbar-toggler"
         type="button"
@@ -21,14 +28,14 @@ const Header = () => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="..">
-              Home <span className="sr-only">(current)</span>
-            </a>
+            <NavLink exact to="/" className="nav-link">
+              App <span className="sr-only">(current)</span>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="..">
-              Link
-            </a>
+            <NavLink to="/details" className="nav-link">
+              Details
+            </NavLink>
           </li>
           <li className="nav-item dropdown">
             <a
@@ -40,28 +47,31 @@ const Header = () => {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Dropdown
+              More information
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               <a className="dropdown-item" href="..">
-                Action
+                github
               </a>
               <a className="dropdown-item" href="..">
-                Another action
+                portfolio
               </a>
               <div className="dropdown-divider" />
               <a className="dropdown-item" href="..">
-                Something else here
+                Did you like this test result by John Moran?
               </a>
             </div>
           </li>
         </ul>
-        <form className="form-inline my-2 my-lg-0">
+        <form onSubmit={handleSubmit} className="form-inline my-2 my-lg-0">
           <input
             className="form-control mr-sm-2"
+            name="search"
             type="search"
             placeholder="Search"
             aria-label="Search"
+            onChange={handleChange}
+            value={values.search}
           />
           <button
             className="btn btn-outline-success my-2 my-sm-0"

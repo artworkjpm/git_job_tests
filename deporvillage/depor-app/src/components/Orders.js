@@ -14,6 +14,17 @@ class OrderTable extends Component {
   render() {
     return (
       <React.Fragment>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Search:
+            <input
+              type="text"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
         {this.state.ordersJson.orders.map((order, index) => (
           <div className="order-items" key={index}>
             <table className="table">

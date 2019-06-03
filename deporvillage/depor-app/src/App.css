@@ -77,3 +77,7 @@ ul.list-unstyled {
 .increase {
   font-size: 1.5em;
 }
+
+.jumbotron li {
+  margin-bottom: 20px;
+}

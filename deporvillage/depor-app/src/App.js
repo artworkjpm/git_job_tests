@@ -1,14 +1,19 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import Details from "./components/Details";
 import Header from "./components/Header";
-import Orders from "./components/Orders";
+import OrderTable from "./components/Orders";
 import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Orders />
+        <BrowserRouter>
+          <Header />
+          <Route exact path="/" component={OrderTable} />
+          <Route path="/details" component={Details} />
+        </BrowserRouter>
       </div>
     );
   }
