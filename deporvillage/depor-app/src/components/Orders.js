@@ -7,25 +7,36 @@ class OrderTable extends Component {
   constructor() {
     super();
     this.state = {
-      ordersJson
+      ordersJson,
+      search: ""
     };
   }
 
+  updateSearch(event) {
+    this.setState({
+      search: event.target.value
+    });
+  }
+
   render() {
+    let searchResult = this.state.ordersJson.orders.filter(name => {
+      return name.name.indexOf(this.state.search) !== -1;
+    });
     return (
       <React.Fragment>
-        <form onSubmit={this.handleSubmit}>
+        <form className="form-inline my-2 my-lg-0" onSubmit={this.handleSubmit}>
           <label>
             Search:
             <input
+              className="form-control mr-sm-2"
               type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
+              value={this.state.search}
+              onChange={this.updateSearch.bind(this)}
             />
           </label>
           <input type="submit" value="Submit" />
         </form>
-        {this.state.ordersJson.orders.map((order, index) => (
+        {searchResult.map((order, index) => (
           <div className="order-items" key={index}>
             <table className="table">
               <tbody>

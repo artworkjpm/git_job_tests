@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Header />
-          <Route exact path="/" component={OrderTable} />
+          <Route exact path="/" render={() => <OrderTable />} />
           <Route path="/details" component={Details} />
         </BrowserRouter>
       </div>

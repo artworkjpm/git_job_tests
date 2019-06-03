@@ -1,7 +1,7 @@
 {
   "orders": [
     {
-      "name": "John Smith",
+      "name": "Smith",
       "orderId": 234568,
       "items": [
         {
@@ -31,7 +31,7 @@
     },
 
     {
-      "name": "John Smith",
+      "name": "Moran",
       "orderId": 145330568,
       "items": [
         {
@@ -68,7 +68,7 @@
       "orderStatus": "Sent to warehouse"
     },
     {
-      "name": "John Smith",
+      "name": "Ramos",
       "orderId": 23445568,
       "items": [
         {
@@ -96,7 +96,7 @@
       "orderStatus": "Delivered"
     },
     {
-      "name": "John Smith",
+      "name": "Adams",
       "orderId": 4448,
       "items": [
         {
@@ -123,7 +123,7 @@
       "orderStatus": "Delivered"
     },
     {
-      "name": "John Smith",
+      "name": "Wright",
       "orderId": 444999748,
       "items": [
         {
