@@ -13,16 +13,17 @@ const Details = () => {
           candidate to be creative because there wasn't many specific demands. I
           chose to use <b>React</b> as the Framework, seeing as this my current
           favourite to use. I made a json file <b>orderJson.js</b>. I took a
-          looked at Amazons order list "Mis pedidos" and tried to make something
+          look at Amazons order list "Mis pedidos" and tried to make something
           similar.
         </li>
         <li>
           I first created CREATE-REACT-APP then decided to use <b>bootstrap</b>{" "}
           because I didn't want to waste time on the css, my interpretation on
           the test was that you are more interesting in the development more
-          than the styling. Although I could have made it without bootstrap, my
-          css/sass, using bootstrap just saved time and enabled me to think
-          about the handling the orders.
+          than the styling. Although I could have made it without bootstrap
+          because my css/sass skill are of a high standard, using bootstrap just
+          saved time and enabled me to think controling the app rather than the
+          styling of it.
         </li>
         <li>
           I made a simple order layout, showing the <b>OrderTable</b> component.
@@ -38,7 +39,7 @@ const Details = () => {
           was the first time I called to this API, so I wanted to show you that
           I'm not afraid to try new things to fix a problem, the problem being I
           didn't have any images to show for my products and I didn't want to
-          through the process of find, downloading and hosting images.
+          through the process of searching, downloading and hosting images.
         </li>
       </ul>
       <hr className="my-4" />

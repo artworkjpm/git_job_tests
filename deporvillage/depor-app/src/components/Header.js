@@ -1,13 +1,7 @@
 import React from "react";
-import useForm from "./search/useForm";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
-  const { values, handleChange, handleSubmit } = useForm(search);
-  function search() {
-    console.log(values);
-  }
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <NavLink exact to="/" className="navbar-brand">
@@ -63,23 +57,6 @@ const Header = () => {
             </div>
           </li>
         </ul>
-        <form onSubmit={handleSubmit} className="form-inline my-2 my-lg-0">
-          <input
-            className="form-control mr-sm-2"
-            name="search"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            onChange={handleChange}
-            value={values.search}
-          />
-          <button
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
       </div>
     </nav>
   );

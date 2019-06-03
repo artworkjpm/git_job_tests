@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ordersJson from "./objects/orderJson.json";
 import OrderHeading from "./OrderHeading";
 import Items from "./Items";
+import SearchLastName from "./search/searchForm.js";
 
 class OrderTable extends Component {
   constructor() {
@@ -12,30 +13,26 @@ class OrderTable extends Component {
     };
   }
 
-  updateSearch(event) {
+  updateSearchLastName(event) {
     this.setState({
       search: event.target.value
     });
   }
 
   render() {
+    //make it possible to search upper or lower case lastnames:
+    const name = this.state.search;
+    const nameCapitalized = name.charAt(0).toUpperCase() + name.slice(1);
+    //search the json for lastnames
     let searchResult = this.state.ordersJson.orders.filter(name => {
-      return name.name.indexOf(this.state.search) !== -1;
+      return name.lastname.indexOf(nameCapitalized) !== -1;
     });
     return (
       <React.Fragment>
-        <form className="form-inline my-2 my-lg-0" onSubmit={this.handleSubmit}>
-          <label>
-            Search:
-            <input
-              className="form-control mr-sm-2"
-              type="text"
-              value={this.state.search}
-              onChange={this.updateSearch.bind(this)}
-            />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+        <SearchLastName
+          onvalue={this.state.search}
+          onChange={this.updateSearchLastName.bind(this)}
+        />
         {searchResult.map((order, index) => (
           <div className="order-items" key={index}>
             <table className="table">
