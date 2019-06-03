@@ -152,7 +152,7 @@
         "shipping": "Manchester road, England",
         "billing": "Thierry Henry Avenue, London"
       },
-      "orderStatus": "Delivered"
+      "orderStatus": "In Transit"
     }
   ]
 }

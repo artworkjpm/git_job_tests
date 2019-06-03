@@ -10,6 +10,16 @@ const OrderHeading = props => {
     );
   }
 
+  function decideClass() {
+    if (props.order.orderStatus === "Delivered") {
+      return "list-group-item list-group-item-success";
+    } else if (props.order.orderStatus === "In Transit") {
+      return "list-group-item list-group-item-warning";
+    } else {
+      return "list-group-item";
+    }
+  }
+
   return (
     <div className="row">
       <div className="col-6">
@@ -36,9 +46,7 @@ const OrderHeading = props => {
         <div>
           <b>Order Status: </b>
           <ul className="list-group">
-            <li className="list-group-item list-group-item-success">
-              {props.order.orderStatus}
-            </li>
+            <li className={decideClass()}>{props.order.orderStatus}</li>
           </ul>
         </div>
       </div>

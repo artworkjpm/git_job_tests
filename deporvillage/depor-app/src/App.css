@@ -89,3 +89,7 @@ ul.list-unstyled {
 .names {
   text-transform: capitalize;
 }
+
+.dropdown-menu {
+  min-width: 20rem;
+}

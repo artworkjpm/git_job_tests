@@ -51,9 +51,9 @@ const Header = () => {
                 portfolio
               </a>
               <div className="dropdown-divider" />
-              <a className="dropdown-item" href="..">
-                Did you like this test result by John Moran?
-              </a>
+              <NavLink to="/liked" className="nav-link">
+                Did you like this test by John Moran?
+              </NavLink>
             </div>
           </li>
         </ul>
