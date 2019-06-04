@@ -21,14 +21,9 @@ const Header = () => {
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <NavLink exact to="/" className="nav-link">
-              App <span className="sr-only">(current)</span>
-            </NavLink>
-          </li>
           <li className="nav-item">
             <NavLink to="/details" className="nav-link">
-              Details
+              Explaination
             </NavLink>
           </li>
           <li className="nav-item dropdown">
@@ -47,7 +42,11 @@ const Header = () => {
               <a className="dropdown-item" href="..">
                 github
               </a>
-              <a className="dropdown-item" href="..">
+              <a
+                className="dropdown-item"
+                target="blank"
+                href="http://journeyofjpm.blogspot.com/p/work-examples.html"
+              >
                 portfolio
               </a>
               <div className="dropdown-divider" />

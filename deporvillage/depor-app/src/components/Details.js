@@ -5,7 +5,14 @@ const Details = () => {
     <div className="jumbotron">
       <h1 className="display-4">Hello Deporvillage!</h1>
       <hr className="my-4" />
-      <p className="lead">My explanation the Order Explorer test</p>
+      <p className="lead">
+        Things that could impress you -{" "}
+        <b>
+          API call to get images, ternary class conditions for the order status,
+          Math on the item prices, React Hook on the quantity (Order again),
+          Search orders by last name, using React Router for different pages.
+        </b>
+      </p>
       <hr className="my-4" />
       <ul>
         <li>
@@ -45,6 +52,82 @@ const Details = () => {
       <hr className="my-4" />
       <p className="lead">Dealing with Search and Modify order</p>
       <hr className="my-4" />
+      <ul>
+        <li>
+          <b>Search</b>
+          <br />I enabled Search to take place, just with the customers last
+          name. I could integrate any part of the order, ie the Item name or ID
+          of the product, for this test, I just enabled the customer name.
+        </li>
+        <li>
+          <b>Modify </b>
+          <br />I use three buttons, "Order again", "Return item", "Cancel".
+          Each is set up to display different text. In order to update the State
+          of the json, I would have to lift the state to the index or app
+          component, then pass down data via props. Or I could make
+          React.Context and have one master state witout needing to pass down,
+          also done with Redux. Seeing as that would take some time, this demo
+          app just displays different text dependant on the button you click. I
+          did use React Hooks for the first time on the QUANTITY. React hooks is
+          the future of React development, to be a functional component way of
+          making apps, instead of using Classes and having the issues of BINDING
+          THIS.
+        </li>
+      </ul>
+      <hr className="my-4" />
+      <p className="lead">Deploy the service to a cloud hosting</p>
+      <hr className="my-4" />
+
+      <ol>
+        <li>
+          <b>CI/CD? How? Which tools?</b>
+          <br />
+          Continious Integration / Deployment is a must enabling DevOps to
+          update a site by pushing the new code to a repo on github or bitbucket
+          and is the ideal way to manage a site, automating builds and finding
+          bugs in the build before it is deployed. There are a mulitude of
+          companies available, from Firebase, to TeamCity for the build server,
+          I used TeamCity at 15below, my old employer in the UK and monitored
+          builds when I was merging my feature branch. For cloud hosting it
+          depends on your budget and traffic, Google Cloud Build has the best
+          price but that is for basic sites, but Amazon web services or Azure
+          are popular and reliable.
+          <br />
+          Working in an Agile way, creating branches to add new features, CI
+          helps fix/find bugs, whenever there is a change to the repo, the CI
+          will make a build and alert any problems in the build. The new code is
+          not hosted until it passes the build. CD Continious Deployment moves
+          this further but CI and CD basically work together.
+        </li>
+        <li>
+          <b>Monitoring & Alerts? Any concrete tool?</b>
+          <br />I used Octopus Deploy for the builds, automating the deployment
+          to the build server, I am happy to take on this responsibility of
+          this. Another popular tool for monitoring/logging builds is Jenkins.
+          Octopus integrates with build servers like TeamCity, Bamboo, Jenkins.
+        </li>
+        <li>
+          <b>Deployment - Microplatform (AMI) vs Kubernetes?</b>
+          <br />
+          I'll be honest, I don't know what Microplatform (AMI) is. I have heard
+          of Kubernetes or K8s, it is a great way to manage your deployment,
+          splitting your deployed applications into deploy containers, making it
+          portable, small and fast. In terms of what to choose, I'll have to
+          know what Microplatform AMI is, after Googling it, the best answer I
+          have is that it is Amazon Machine Images, I can't really give you my
+          opinion on this, I would be making it up!
+        </li>
+      </ol>
+      <hr className="my-4" />
+      <p className="lead">Final message</p>
+      <hr className="my-4" />
+      <p>
+        Al final he quierido decir que aún no lo sé todo las cosas de IT,
+        Front-End y Deployment. Cada día estoy aprendiendo cosas nuevas, pero
+        cuando tengo un problem, yo sé la manera encontrar un solucíon.
+        <br />
+        Gracías, John.{" "}
+      </p>
     </div>
   );
 };
