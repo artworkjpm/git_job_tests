@@ -39,7 +39,10 @@ const Header = () => {
               More information
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="..">
+              <a
+                className="dropdown-item"
+                href="https://github.com/artworkjpm/git_job_tests/tree/master/deporvillage/depor-app"
+              >
                 github
               </a>
               <a
