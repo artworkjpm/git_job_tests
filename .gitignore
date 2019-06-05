@@ -21,6 +21,7 @@ deporvillage/depor-app/npm-debug.log*
 deporvillage/depor-app/yarn-debug.log*
 deporvillage/depor-app/yarn-error.log*
 fetchingInReact-master/node_modules
+deporvillage/depor-app/.env
 
 
 deporvillage/depor-app/src/components/objects/apiKey.json
