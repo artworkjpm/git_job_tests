@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import OrderAgain from "./modals/orderAgain";
 import Return from "./modals/Return";
 import Cancel from "./modals/Cancel";
-import APIKey from "./objects/apiKey.json";
 import axios from "axios";
 
 export default class Items extends Component {
@@ -19,10 +18,10 @@ export default class Items extends Component {
   componentDidMount() {
     //I made an api call to unsplash to get images using the item name
     let itemName = this.props.item.itemsku;
+    let unsplashApiKey = process.env.REACT_APP_UNSPLASH;
     axios
       .get(
-        `https://api.unsplash.com/search/photos?query=${itemName}?&client_id=` +
-          APIKey.APIKey
+        `https://api.unsplash.com/search/photos?query=${itemName}?&client_id=${unsplashApiKey}`
       )
       .then(data => {
         this.setState({ imgs: data.data.results[0].urls.thumb });
