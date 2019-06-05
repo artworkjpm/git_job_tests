@@ -20,3 +20,5 @@ I used an npm module call dotenv which allows me to store api keys in a file cal
 then `let unsplashApiKey = process.env.REACT_APP_UNSPLASH;` where you want to call the api key.
 
 I must use REACT*APP* before the name of the variable.
+
+Inside Netlify, I create an environment variable, using `REACT_APP_UNSPLASH` as the key, and the api key, as the key. This will then call this variable on the build, in Netlify.
