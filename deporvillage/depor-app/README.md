@@ -19,9 +19,9 @@ I used an npm module call dotenv which allows me to store api keys in a file cal
 `require("dotenv").config();` in the index.js
 then `let unsplashApiKey = process.env.REACT_APP_UNSPLASH;` where you want to call the api key.
 
-I must use REACT*APP* before the name of the variable.
+I must use `REACT_APP_` before the name of the variable.
 
 Inside Netlify, I create an environment variable, using `REACT_APP_UNSPLASH` as the key, and the api key, as the key. This will then call this variable on the build, in Netlify.
 
 ###How I fixed the routing issue with /details
-If you want to use route as an external link, you need to create a \_redirect file and place inside the public folder, with the code inside to redirect to the index.html
+If you want to use route as an external link, you need to create a `_redirect` file and place inside the public folder, with the code inside to redirect to the index.html
