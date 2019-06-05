@@ -12,3 +12,11 @@ to view the app
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+### Notes on hiding API keys
+
+I used an npm module call dotenv which allows me to store api keys in a file called .env, in the root folder. Then I call the variable I want from that file using:
+`require("dotenv").config();` in the index.js
+then `let unsplashApiKey = process.env.REACT_APP_UNSPLASH;` where you want to call the api key.
+
+I must use REACT*APP* before the name of the variable.
